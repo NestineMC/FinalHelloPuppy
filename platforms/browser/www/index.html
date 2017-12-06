@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1, maximum-scale = 1, minimum-scale = 1, user-scalable = no, minimal-ui" />
+    <meta name = "apple-mobile-web-app-capable" content = "yes" />
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "black" />
+    <title>Hello Puppy</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.min.css" />
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.colors.min.css" />
+    <script type = "text/javascript" 
+         src = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/js/framework7.min.js">
+    </script>
+    <script>
+         // here initialize the app
+         var myApp = new Framework7();
+
+         // If your using custom DOM library, then save it to $$ variable
+         var $$ = Dom7;
+
+         // Add the view
+         // var mainView = myApp.addView('.view-main', {
+            
+         //    // enable the dynamic navbar for this view:
+         //    dynamicNavbar: true
+         // });
+
+         //use the 'pageInit' event handler for all pages
+         $$(document).on('pageInit', function (e) {
+         
+            //get page data from event data
+            var page = e.detail.page;
+
+            if (page.name === 'blog') {
+            
+               // you will get below message in alert box when page with data-page attribute is equal to "about"
+               myApp.alert('Here its your About page');
+            }
+         })
+        //converting the age
+        function calcAge()
+            {
+                var age = document.getElementById('dogAge').value;
+                if(age<=0){
+                    var result = "Invalid input";
+                }
+                else{
+                age = age *7;
+                    var result = "In dog years, your dog is: "+ age + " years old";
+                }
+                 document.getElementById('result').innerHTML = result; 
+            }
+      </script>
+</head>
+<body>
+<!-- navbar -->
+<div class = "views">
+<div class = "view view-main">
+    <div class = "navbar">
+        <div class = "navbar-inner">
+            <div class = "center sliding">Hello Puppy</div>
+                <div class = "right">
+                    <a href = "#" class = "link icon-only open-panel">
+                        <i class = "icon icon-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- converting the age of dog in dog year -->
+        <center>
+            <br><br><br>
+            <p class="style"> Dog Age in Human Year</p><br><br>
+            <input id="dogAge" type="number" style="width: 10em; height: 20px; font-size: 18px;" /><br><br>
+            <button id="btnCalc" onclick="calcAge()" class="button">Calculate</button><br><br>
+            <div id="result" class="style"></div>
+        </center>
+    </div>
+</div>
+<!-- side panel -->
+<div class = "statusbar-overlay"></div>
+<div class = "panel-overlay"></div>
+<div class = "panel panel-right panel-reveal">
+    <div class = "content-block">
+        <h2 class="style">ABOUT</h2>
+        <hr width=115%/>
+        <center>
+            <br><br>
+            <p>This app calculate your dog's age. It was not the best app in the world but atleast it was not useless. So, Hey! lets take care of our puppy :).</p>
+        </center>
+    </div>
+</div>
+</body>
+</html>

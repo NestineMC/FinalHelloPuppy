@@ -1,0 +1,22 @@
+        html,body{
+            height:100%;
+            margin:0;
+            padding:0;  
+        }
+        .break
+        {
+            margin-top: 60em;
+        }
+        /*style for buttons*/
+        .button
+        {
+            size:10px;
+            color:gray;
+            position: center;
+            text-align: center;
+        }
+        /*style for texts*/
+        .style
+        {
+            font-family: Courier New;
+        }
