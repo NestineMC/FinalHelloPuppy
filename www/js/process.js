@@ -6,20 +6,19 @@ calcAge:function ()
                 let S= age*7;
                 if(S<=0)
                 {
-                	var result = "Invalid input";
+                	var result = <a href="#" onClick={process.out}>Invalid input</a>;
                 }
                 else{
-                	var result = "In dog's year, your dog is "+S+" years old";
+                	var result = <a href="#" onClick={process.out}>In dog's year, your dog's age is {S}</a>;
                 }
                 ReactDOM.render(result,document.getElementById('root'));
             },
-
 out:function(){
 let _root = document.getElementById('root');
 let dom = <div>
                 <input type='number' id="num1" /> &nbsp;
                 <input type='button' onClick={process.calcAge} value='Compute'/>
-            </div>;
+            </div>; 
 ReactDOM.render(dom,_root);}
 }
 process.out();
